@@ -1,0 +1,16 @@
+.filterLabel {
+  font-weight: 500;
+}
+.filterInput {
+  display: block;
+  padding: 10px 25px;
+  font-size: 18px;
+  width: 320px;
+  height: 36px;
+  border: 1px orange solid;
+  border-radius: 15px;
+  margin-top: 12px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+}

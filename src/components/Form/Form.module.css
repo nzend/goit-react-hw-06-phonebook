@@ -1,0 +1,36 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+
+.formLabel {
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.formInput {
+  padding: 10px 25px;
+  font-size: 18px;
+  display: block;
+  width: 320px;
+  height: 36px;
+  border: 1px orange solid;
+  border-radius: 15px;
+  margin-top: 12px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.addBtn {
+  display: block;
+  width: 180px;
+  height: 32px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid black;
+  background: linear-gradient(141.22deg, #ffc226 9.4%, #f84119 91.91%);
+  border-radius: 74px;
+  color: #111111;
+  cursor: pointer;
+}

@@ -1,0 +1,33 @@
+.contactList {
+  width: 480px;
+  border: tomato 1px solid;
+  padding: 32px;
+  border-radius: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.contactItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.deleteBtn {
+  display: block;
+  width: 120px;
+  height: 32px;
+
+  border: 1px solid black;
+  background: linear-gradient(141.22deg, #ffc226 20%, #f84119 80%);
+  border-radius: 74px;
+  color: #111111;
+  cursor: pointer;
+}
+
+.contactName {
+  font-weight: 500;
+  font-size: 18px;
+}
+.contactNumber {
+  margin-left: 8px;
+}
