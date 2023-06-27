@@ -1,33 +1,28 @@
-import React, { useState } from 'react';
 import css from './Form.module.css';
+import { useSelector, useDispatch } from 'react-redux';
+import { addContact } from '../../redux/contactsSlice';
 
-const Form = ({ onSubmit }) => {
-  const [name, setName] = useState('');
-  const [number, setNumber] = useState('');
+const Form = () => {
+  const contacts = useSelector(state => state.contacts.contacts);
+
+  const dispatch = useDispatch();
 
   const handleSubmit = e => {
     e.preventDefault();
 
-    onSubmit(name, number);
-    setName('');
-    setNumber('');
-  };
+    const contact = {
+      name: e.target.name.value,
+      number: e.target.number.value,
+    };
 
-  const handleChange = e => {
-    const { name, value } = e.target;
-
-    switch (name) {
-      case 'name':
-        setName(value);
-        break;
-
-      case 'number':
-        setNumber(value);
-        break;
-
-      default:
-        return;
+    if (contacts.find(contact => contact.name === e.target.name.value)) {
+      alert('Такий контакт вже є');
+      return;
     }
+
+    dispatch(addContact(contact));
+
+    e.currentTarget.reset();
   };
 
   return (
@@ -36,8 +31,6 @@ const Form = ({ onSubmit }) => {
         Name
         <input
           className={css.formInput}
-          onChange={handleChange}
-          value={name}
           type="text"
           name="name"
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -50,8 +43,6 @@ const Form = ({ onSubmit }) => {
         Number
         <input
           className={css.formInput}
-          onChange={handleChange}
-          value={number}
           type="tel"
           name="number"
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
